@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane fx:id="manageCoursesContext" prefHeight="780.0" prefWidth="1228.0" style="-fx-background-color: #00ff00;;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ManageCoursesFormController">
+    <children>
+        <AnchorPane layoutX="255.0" layoutY="-1.0" prefHeight="780.0" prefWidth="973.0" style="-fx-background-color: #00a300;">
+            <children>
+
+                <Label layoutX="59.0" layoutY="42.0" text="Manage Courses" textFill="#ffdd00">
+                    <font>
+                        <Font name="System Bold" size="46.0" />
+                    </font>
+                </Label>
+                <Label layoutX="48.0" layoutY="177.0" text="Program ID :" />
+                <Separator layoutX="319.0" layoutY="103.0" prefHeight="3.0" prefWidth="592.0" />
+                <TextField fx:id="txtProgramID" layoutX="144.0" layoutY="174.0" prefHeight="31.0" prefWidth="313.0" promptText="eg : CTO301" />
+                <Label layoutX="65.0" layoutY="233.0" text="Program :" />
+                <Label layoutX="63.0" layoutY="289.0" text="Duration :" />
+                <Button layoutX="765.0" layoutY="374.0" mnemonicParsing="false" onAction="#addOnAction" prefHeight="34.0" prefWidth="165.0" style="-fx-background-color: #001D9F; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button layoutX="560.0" layoutY="374.0" mnemonicParsing="false" onAction="#cancelOnAction" prefHeight="34.0" prefWidth="165.0" style="-fx-background-color: #A8A8B0; -fx-background-radius: 10;" text="Cancel" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00a300" height="31.0" layoutY="727.0" stroke="WHITE" strokeType="INSIDE" width="973.0" />
+            <TextField fx:id="txtProgramName" layoutX="144.0" layoutY="230.0" prefHeight="31.0" prefWidth="313.0" />
+            <TextField fx:id="txtDuration" layoutX="144.0" layoutY="284.0" prefHeight="31.0" prefWidth="313.0" promptText="1 Year" />
+            <Label layoutX="97.0" layoutY="342.0" text="Fee :" />
+            <TextField fx:id="txtFee" layoutX="144.0" layoutY="337.0" prefHeight="31.0" prefWidth="313.0" promptText="LKR" />
+            <TableView fx:id="tblProgramDetails" layoutX="28.0" layoutY="446.0" prefHeight="225.0" prefWidth="707.0" stylesheets="@../styles/TableStyles.css">
+              <columns>
+                <TableColumn fx:id="colProgramID" prefWidth="96.0" style="-fx-border-color: black;" text="Program ID" />
+                <TableColumn fx:id="colProgramName" prefWidth="331.0" style="-fx-border-color: black;" text="Program" />
+                  <TableColumn fx:id="colDuration" prefWidth="138.0" style="-fx-border-color: black;" text="Duration" />
+                  <TableColumn fx:id="colFee" prefWidth="138.0" style="-fx-border-color: black;" text="Fee (LKR)" />
+              </columns>
+            </TableView>
+            <Button layoutX="765.0" layoutY="660.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="34.0" prefWidth="165.0" style="-fx-background-color: #A42222; -fx-background-radius: 10;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            </children>
+        </AnchorPane>
+
+        <Label layoutX="20.0" layoutY="748.0" prefHeight="21.0" prefWidth="343.0" text="Copyright Kaveesh Senevirathne" textFill="#a8a8a8" />
+        <Button layoutX="31.0" layoutY="458.0" mnemonicParsing="false" onAction="#openStudentDetailFormOnAction" prefHeight="31.0" prefWidth="201.0" style="-fx-background-color: #007500; -fx-background-radius: 10;" text="View Student Details" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button disable="true" layoutX="29.0" layoutY="520.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="201.0" style="-fx-background-color: #007500; -fx-background-radius: 10;" text="Modify details of courses" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <FontAwesomeIconView fill="WHITE" glyphName="HOME" layoutX="15.0" layoutY="36.0" onMouseClicked="#goToRegisterFormOnAction" size="30.0" wrappingWidth="32.214284896850586">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></FontAwesomeIconView>
+        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="22.0" layoutY="47.0">
+            <image>
+                <Image url="@../assets/icon-book.jpg" />
+            </image>
+        </ImageView>
+        <Button layoutX="54.0" layoutY="672.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="130.0" style="-fx-background-color: #0000ff; -fx-background-radius: 10;" text="Logout" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+    </children>
+</AnchorPane>
