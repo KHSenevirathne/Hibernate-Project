@@ -1,2 +1,2 @@
 # Hibernate-Project
-Vocational Training Program Using Hibernate
+Vocational Training Program Using Hibernate.
